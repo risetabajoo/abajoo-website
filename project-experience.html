@@ -57,5 +57,26 @@
   <footer>
     &copy; 2024 Abajoo Solutions. All rights reserved.
   </footer>
+  <!-- Tambahkan di setiap halaman sebelum </body> -->
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  // Highlight active link
+  const currentPage = window.location.pathname.split("/").pop();
+  const navItems = document.querySelectorAll('nav ul li a');
+  navItems.forEach(item => {
+    if(item.getAttribute('href') === currentPage){
+      item.classList.add('active');
+    } else {
+      item.classList.remove('active');
+    }
+  });
+</script>
+
 </body>
 </html>
